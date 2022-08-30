@@ -1,0 +1,9 @@
+{
+	"name": "p5datafactory",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "1bd2694d-709c-4c3f-9240-30eefcceb810",
+		"tenantId": "d444a733-0aca-41d3-8de7-cac53fa84d5a"
+	}
+}

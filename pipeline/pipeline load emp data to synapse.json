@@ -1,0 +1,41 @@
+{
+	"name": "pipeline load emp data to synapse",
+	"properties": {
+		"activities": [
+			{
+				"name": "load emp data to synapse",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "dataflow load emp_master to synapsesdb",
+						"type": "DataFlowReference"
+					},
+					"staging": {
+						"linkedService": {
+							"referenceName": "ls_data_lake_files",
+							"type": "LinkedServiceReference"
+						},
+						"folderPath": "adlsnycpayroll-naveen-kumar/dirstaging"
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					},
+					"traceLevel": "Fine"
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2022-08-30T17:08:23Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
